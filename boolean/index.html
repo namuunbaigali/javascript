@@ -90,24 +90,24 @@
       //   4n huwisagc zarlan toon utga og. Ogogdson 4 toony 80-aas ih toonuudyn niilberyg ol
       //   a=85 b=75 c=96 d=69
 
-      let a = 85,
-        b = 75,
-        c = 96,
-        d = 69,
-        y = 80;
-      if ((a > b) & (a > c) & (a > d) & (a > y)) {
-        console.log(" a 80aasih");
-      } else if ((b > a) & (b > c) & (b > d) & (b > y)) {
-        console.log(" b 80aas baga");
-      } else if ((c > a) & (c > b) & (c > d) & (c > y)) {
-        console.log(" c 80aasih");
-      } else if ((d > a) & (d > b) & (d > c) & (d > y)) {
-        console.log(" d 80aas baga");
-      } else if ((y > a) & (y > b) & (y > c) & (y > d)) {
-        console.log(" d 80tai tentsuu");
-      } else {
-        console.log(" 80aas ih toonuudyg ol");
-      }
+      // let a = 85,
+      //   b = 75,
+      //   c = 96,
+      //   d = 69,
+      //   y = 80;
+      // if ((a > b) & (a > c) & (a > d) & (a > y)) {
+      //   console.log(" a 80aasih");
+      // } else if ((b > a) & (b > c) & (b > d) & (b > y)) {
+      //   console.log(" b 80aas baga");
+      // } else if ((c > a) & (c > b) & (c > d) & (c > y)) {
+      //   console.log(" c 80aasih");
+      // } else if ((d > a) & (d > b) & (d > c) & (d > y)) {
+      //   console.log(" d 80aas baga");
+      // } else if ((y > a) & (y > b) & (y > c) & (y > d)) {
+      //   console.log(" d 80tai tentsuu");
+      // } else {
+      //   console.log(" 80aas ih toonuudyg ol");
+      // }
 
       //         1. Хоёр багийн дундаж оноог олно уу. ( A team - 96, 108, 89; B team - 88, 91, 110 )
       //   2. Багийн дундаж нөгөө багийхаас их бол тэр баг түрүүлсэн гэж хэвлэнэ үү.
@@ -117,9 +117,10 @@
       //    Тус бүрийн нөхцөлийг оноог өөрчилж туршиж үзээрэй.
 
       let ateam = ((s = 96), (d = 108), (f = 89)),
-        bteam = ((g = 88), (h = 91), (j = 110));
+        bteam = ((g = 88), (h = 91), (j = 110)),
+        c = (s + d + f) / 3;
       if ((s + d + f) / 3) {
-        console.log(dundaj);
+        console.log(c);
       }
     </script>
   </body>
