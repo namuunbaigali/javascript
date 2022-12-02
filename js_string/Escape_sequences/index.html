@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <Script>
+    <script>
         const tex1='Hello I am \"Name Here"\.';
-        const tex2= " I am'Age here' years old.";
+        const tex2= "I am'\Age here\' years old\.";
         const tex3= 'This is the new line with tab and some \\backslashes\\.'
-        const message='${tex1} \n ${ tex2} \n ${tex3}'
+        const message=(`${ tex1 }\n${tex2}\n   ${tex3}`)
         console.log(message);
-    </Script>
+    </script>
 </body>
 </html>
