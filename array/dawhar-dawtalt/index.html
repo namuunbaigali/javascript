@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Давхар давталт</title>
+</head>
+<body>
+    <script>
+//         1. Давхар давталт 1
+// Бүхэл тоо өгөгдөнө. Жишээн дээрхтэй төстэй тоон хэлбэрийг үүсгэ.
+// Input: 5
+// Output:
+// - 1 
+//  - 1 2 
+//  - 1 2 3 
+//  - 1 2 3 4 
+//  - 1 2 3 4 5
+
+for(var i=1;i<=5;i++){
+
+    var s='-';
+    for(var k=1;k<=i;k++){
+        s=s+k+' ';
+    }
+    console.log(s)
+}
+
+// 2. Давхар давталт 2
+// Бүхэл тоо өгөгдөнө. Жишээн дээрхтэй төстэй тоон хэлбэрийг 
+// үүсгэ.
+// Input: 5
+// Output:
+// - 5 4 3 2 1 
+// - 5 4 3 2 
+// - 5 4 3 
+// - 5 4 
+// - 5
+
+for(var i = 5; i > 0; i--){
+
+var l ='-';
+for(var k = 1; k <= i; k++){
+    l=l+k+' ';
+}
+console.log(l);
+}
+    </script>
+</body>
+</html>
