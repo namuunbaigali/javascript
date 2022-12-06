@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function</title>
+  </head>
+  <body>
+    <script>
+      function pyramid(rowLenght) {
+        let result = "";
+        for (let i = 1; i <= rowLenght; i++) {
+          for (let j = 0; j < rowLenght - i; j++) {
+            result += " ";
+          }
+          for (let j = 0; j < i; j++) {
+            result += "* ";
+          }
+          result += "\n";
+        }
+        console.log(result);
+      }
+
+      pyramid(5);
+    </script>
+  </body>
+</html>

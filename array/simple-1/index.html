@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple-1</title>
+  </head>
+  <body>
     <script>
-        /*Array - ын хувьсагчийг itCompanies гэж зарлаж, 
+      /*Array - ын хувьсагчийг itCompanies гэж зарлаж, 
  Facebook, Google, Microsoft, Apple, IBM, Oracle,
 Amazon зэрэг анхны утгыг оруулна уу. 
 
@@ -22,30 +22,38 @@ Amazon зэрэг анхны утгыг оруулна уу.
 
 технологийн томоохон компаниуд. */
 
-let itCompanies=[ 'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 
-'Oracle','Amazon'];
-// console.log() ашиглан array хэвлэх
-console.log(itCompanies);
-// Эхний компани, дунд болон сүүлчийн компанийг хэвлэх
-console.log(itCompanies[0][3][6]);
-// Компани бүрийг хэвлэх
+      let itCompanies = [
+        "Facebook",
+        "Google",
+        "Microsoft",
+        "Apple",
+        "IBM",
+        "Oracle",
+        "Amazon",
+      ];
+      // console.log() ашиглан array хэвлэх
+      console.log(itCompanies);
+      // Эхний компани, дунд болон сүүлчийн компанийг хэвлэх
+      console.log(itCompanies[0], itCompanies[3], itCompanies[6]);
+      // Компани бүрийг хэвлэх
 
-for(let i=0 ; i<itCompanies.length ; i++){
-    i+=itCompanies;
-    console.log(i);
-}
-// Компанийн нэр тус бүрийг нэг нэгээр нь том үсгээр сольж хэвлэж гарга
-for(let i=0 ; i<itCompanies.length ; i++){
-    i+=itCompanies;
-    console.log(i.toUpperCase());
-}
-//  Array дахь компаниудын length хэвлэх
-console.log(itCompanies.length);
-// Array - г өгүүлбэр болгон хэвлэ: Facebook, Google, 
-//      Microsoft, Apple, IBM, Oracle, Amazon зэрэг мэдээллийн 
-
-// технологийн томоохон компаниуд.
-console.log(itCompanies +' зэрэг мэдээллийн технологийн томоохон компаниуд.');
+      for (let i = 0; i < itCompanies.length; i++) {
+        i += itCompanies;
+        console.log(i);
+      }
+      // Компанийн нэр тус бүрийг нэг нэгээр нь том үсгээр сольж хэвлэж гарга
+      for (let i = 0; i < itCompanies.length; i++) {
+        i += itCompanies;
+        console.log(i.toUpperCase());
+      }
+      //  Array дахь компаниудын length хэвлэх
+      console.log(itCompanies.length);
+      // Array - г өгүүлбэр болгон хэвлэ: Facebook, Google,
+      //      Microsoft, Apple, IBM, Oracle, Amazon зэрэг мэдээллийн
+      // технологийн томоохон компаниуд.
+      console.log(
+        itCompanies + " зэрэг мэдээллийн технологийн томоохон компаниуд."
+      );
     </script>
-</body>
+  </body>
 </html>
