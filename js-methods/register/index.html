@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <body>
+    <script>
+      function register(value) {
+        function hayg(value) {
+          if (value[0] + value[1] == "У") {
+            aimag = "Ulaanbaatar";
+          } else if (value[0] + value[1] == "А") {
+            aimag = "Arhangai";
+          } else if (value[0] + value[1] == "Б") {
+            aimag = "Bayan-Olgii";
+          } else if (value[0] + value[1] == "В") {
+            aimag = "Bayanhongor";
+          } else if (value[0] + value[1] == "Г") {
+            aimag = "Bulgan";
+          } else if (value[0] + value[1] == "Д") {
+            aimag = "Govi-Altai";
+          } else if (value[0] + value[1] == "Е") {
+            aimag = "Dornogovi";
+          } else if (value[0] + value[1] == "Ж") {
+            aimag = "Dundgovi";
+          } else if (value[0] + value[1] == "З") {
+            aimag = "Zavhan";
+          } else if (value[0] + value[1] == "И") {
+            aimag = "Uvurhangai";
+          } else if (value[0] + value[1] == "Й") {
+            aimag = "Umnugovi";
+          } else if (value[0] + value[1] == "К") {
+            aimag = "Sukhbaatar";
+          } else if (value[0] + value[1] == "Л") {
+            aimag = "Selenge";
+          } else if (value[0] + value[1] == "М") {
+            aimag = "Tuv";
+          } else if (value[0] + value[1] == "Н") {
+            aimag = "Uvs";
+          } else if (value[0] + value[1] == "О") {
+            aimag = "Hovd";
+          } else if (value[0] + value[1] == "П") {
+            aimag = "Huwsgul";
+          } else if (value[0] + value[1] == "Р ") {
+            aimag = "Khentii";
+          } else if (value[0] + value[1] == "С ") {
+            aimag = "Darkhan-Uul";
+          } else if (value[0] + value[1] == "Т") {
+            aimag = "Orkhon";
+          } else if (value[0] + value[1] == "Ф") {
+            aimag = "Govisumber";
+          } else if (value[0] + value[1] == "Х") {
+            aimag = "Ulaanbaatar";
+          }
+        }
+
+        function on(value) {
+          return "төрсөн он :", value[2] + value[3];
+        }
+        function sar(value) {
+          return "төрсөн сар:", value[4] + value[5] - 20;
+        }
+        function udur(value) {
+          return "төрсөн өдөр : ", value[6] + value[7];
+        }
+        function huis(value) {
+          if (value[8] % 2 === 0) {
+            return "эмэгтэй";
+          } else return "эрэгтэй";
+          return value[8];
+        }
+
+        return ` төрсөн газар : ${hayg(value)}  \n төрсөн он : ${on(
+          value
+        )} \n төрсөн сар: ${sar(value)} \n төрсөн өдөр : ${udur(
+          value
+        )} \n  хүйс : ${huis(value)}`;
+      }
+
+      console.log(register("ВЕ62231450"));
+    </script>
+  </body>
+</html>

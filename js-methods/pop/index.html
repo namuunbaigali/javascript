@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array - аас тодорхой элементийг устгах</title>
+  </head>
+  <body>
+    <script>
+      //         array - аас тодорхой элементийг устгах функц бичнэ үү
+
+      // example: console.log(removeArrayElement([2, 1, 6, 5, 8], 6))
+      // [2, 1, 5, 8]
+
+      const arr = [1, 2, 3, 4, 5, 6, 7, 8, 97, 6];
+      console.log(arr);
+
+      const n = 6;
+      function removeArrayElement(list, digitToRemove) {
+        while (list.includes(digitToRemove)) {
+          const indexToRemove = list.indexof(digitToRemove);
+          list.splice(indexToRemove, 1);
+        }
+      }
+      removeArrayElement(arr, n);
+      console.log(arr);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car</title>
+  </head>
+  <body>
+    <script>
+      //         Дараах 2 хэмжээст carBrands array дотор машины дата агуулдаг.
+      // 0 index нь машины брэнд
+      // 1 index нь улс
+      // 2 дахь index нь үйлдвэрлэгдсэн он нь байгаа.
+      // carBrands = [
+      // ["Aston Martin Lagonda Ltd", "UK", 2016],
+      // ["Audi", "Germany", 2016],
+      // ["BMW", "Germany", 2016],
+      // ["Chevrolet", "USA", 2016],
+      // ["Dodge", "USA", 2016],
+      // ["Ferrari", "Italy", 2016],
+      // ["Honda", "Japan", 2016],
+      // ["Jaguar", "UK", 2016],
+      // ["Lamborghini", "Italy", 2016],
+      // ];
+
+      // 1. машины брэндийн эхний үсгээр хайх
+      // input: a
+      // output:   дараах байдлаар хэвлэнэ.
+
+      // brand: Aston Martin Lagonda Ltd
+      // country: UK
+      // year: 2016
+
+      // brand: Audi
+      // country: Germany
+      // year: 2016
+
+      // input: s
+
+      // output: олдсонгүй
+
+      // 2. машины үйлвэрлэсэн улсаар хайх
+
+      // input: USA
+      // output: дараах байдлаар хэвлэнэ.
+
+      // Chevrolet, USA, 2016
+      // Dodge, USA,  2016
+
+      // 3. нийт хэдэн ширхэг мөр дата байгаа, хэдэн улсын brand байгааг харуулах
+      // output:  Нийт 9 мөр дата, UK-2, Germany-2,  USA-2, Italy-2, Japan-1
+
+      const carBrands = [
+        ["Aston Martin Lagonda Ltd", "UK", 2016],
+        ["Audi", "Germany", 2016],
+        ["BMW", "Germany", 2016],
+        ["Chevrolet", "USA", 2016],
+        ["Dodge", "USA", 2016],
+        ["Ferrari", "Italy", 2016],
+        ["Honda", "Japan", 2016],
+        ["Jaguar", "UK", 2016],
+        ["Lamborghini", "Italy", 2016],
+      ];
+      function searchByFirstDigit(brands, letter) {
+        const carNames = [];
+
+        for (let i = 0; i < brands.length; i++) {
+          carNames.push(brands[i][0]);
+        }
+
+        const result = [];
+
+        for (let i = 0; i < carNames.length; i++) {
+          if (carNames[i][0].toLowercase() === letter.toLowercase()) {
+            result.push(brands[i]);
+          }
+        }
+        return result;
+      }
+      const search = prompt("");
+      console.log(searchByFirstDigit(carBrands, search));
+    </script>
+  </body>
+</html>
