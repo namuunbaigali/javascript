@@ -12,9 +12,19 @@
       // 2. arraySorter гэдэг function - руу өгж явуулахад уг function нь array ийг багаас
       // их рүү эрэмбэлээд буцаадаг.
 
-      const arr = [4, 32, 2, 5, 8, -10, 20, 1, 0, -20];
-      arr.sort();
-      console.log(arr);
+      const arr = [4, 32, 2, 5, 8, -10, 20, 1, 0, -2];
+      let temp;
+      console.log(arr.join());
+      for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - i; j++) {
+          if (arr[j] > arr[j + 1]) {
+            temp = arr[j + 1];
+            arr[j + 1] = arr[j];
+            arr[j] = temp;
+          }
+        }
+      }
+      console.log(arr.join(","));
     </script>
   </body>
 </html>

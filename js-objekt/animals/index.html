@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animals</title>
+  </head>
+  <body>
+    <script>
+      //         Амьтадын дата үүсгэнэ үү.
+      // let animals = [{type: "dog", sound: "woof"}, {type: "cow",sound: "moo"},
+      // {type: "cat",sound: "meow"}] гэх мэт.
+      // 1. Амьтан яаж дугардаг function бичнэ үү. (What does the fox say?
+      // "Ring-ding-ding-ding-dingeringeding!" гэх мэт)
+
+      const animals = [
+        { type: "dog", sound: "woof" },
+        { type: "cow", sound: "moo" },
+        { type: "cat", sound: "meow" },
+      ];
+
+      function getCountByAnimals(list, dog) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].type === dog) {
+            count++;
+          }
+          return dog;
+        }
+      }
+      const dog = getCountByAnimals(animals, "woof");
+      const cow = getCountByAnimals(animals, "moo");
+      const cat = getCountByAnimals(animals, "meow");
+
+      console.log(`What does the dog say?
+               ${dog} gej dugardag,\n
+              What does the cow say?
+              ${cow} gej dugardag,\n
+              What does the cat say?
+               ${cat} gej dugardag`);
+    </script>
+  </body>
+</html>

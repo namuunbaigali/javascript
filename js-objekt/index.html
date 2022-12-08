@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = [
+        { gender: "m", firstname: "Dorj", lastname: "bat", point: 80, age: 19 },
+        {
+          gender: "f",
+          firstname: "balt",
+          lastname: "tulga",
+          point: 70,
+          age: 33,
+        },
+        {
+          gender: "m",
+          firstname: "bold",
+          lastname: "tuul",
+          point: 60,
+          age: 44,
+        },
+        {
+          gender: "m",
+          firstname: "nara",
+          lastname: "nadmid",
+          point: 40,
+          age: 56,
+        },
+        {
+          gender: "m",
+          firstname: "tuya",
+          lastname: "badam",
+          point: 75,
+          age: 71,
+        },
+        {
+          gender: "f",
+          firstname: "tsetseg",
+          lastname: "bymbaa",
+          point: 67,
+          age: 22,
+        },
+        {
+          gender: "f",
+          firstname: "sara",
+          lastname: "ganbaa",
+          point: 51,
+          age: 20,
+        },
+        {
+          gender: "m",
+          firstname: "dima",
+          lastname: "baganaa",
+          point: 98,
+          age: 13,
+        },
+        {
+          gender: "f",
+          firstname: "   danya",
+          lastname: "baldan",
+          point: 99,
+          age: 12,
+        },
+      ];
+
+      //   huiseer ni er, em hed baigaag
+      //   nasaar 0-17hurtelh 18-35,  25-40,   40+
+      //   avsab dungeer ni erembeleh
+      //   nereer ni haidag
+
+      function getCountByGender(list, gender) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].gender === gender) {
+            count++;
+          }
+        }
+        return count;
+      }
+      const femaleCount = getCountByGender(data, "f");
+      const maleCount = getCountByGender(data, "m");
+
+      console.log(`niit ${femaleCount} emegtei,${maleCount} eregtei baina.`);
+
+      function getCountByFieldValueRange(list, key, min, max) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i][key] > min && list[i][key] < max) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      const childrenCount = getCountByFieldValueRange(data, "age", 0, 18);
+      const youth = getCountByFieldValueRange(data, "age", 18, 30);
+      const adult = getCountByFieldValueRange(data, "age", 30, 55);
+      const elder = getCountByFieldValueRange(data, "age", 55, 200);
+      console.log(`Niit: 
+ ${childrenCount} huuhed,
+ ${youth} zaluu nasnii humuus,
+ ${adult} dundaj ergem nasnii humuus,
+ ${elder} ahmad nasnii humuus baina`);
+
+      const totalA = getCountByFieldValueRange(data, "point", 90, 101);
+      const totalB = getCountByFieldValueRange(data, "point", 80, 90);
+      const totalC = getCountByFieldValueRange(data, "point", 70, 80);
+      const totalD = getCountByFieldValueRange(data, "point", 60, 70);
+      const totalF = getCountByFieldValueRange(data, "point", 0, 60);
+      console.log(`Niit: 
+ ${totalA} A,
+ ${totalB} B,
+ ${totalC} C,
+ ${totalD} D,
+ ${totalF} F`);
+
+      const ners1 = getCountByFieldValueRange(
+        data,
+        "lastname",
+        "firstname",
+        "aa",
+        "ba"
+      );
+    </script>
+  </body>
+</html>
