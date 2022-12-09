@@ -8,19 +8,10 @@
   </head>
   <body>
     <script>
-      //    for( var i=0; i<=10; i++ ){
-
-      //      var sum='*';
-      //      var result='';
-      //      for(var j=1; j<=i;j++){
-      //      sum=sum+j+'';
-      //      i++;
-      //   }
-      //   console.log(sum);
-      // }
+     let k=10;
       let result = "";
-      for (let i = 1; i <= rowLenght; i++) {
-        for (let j = 0; j < rowLenght - i; j++) {
+      for (let i = 1; i <= k; i++) {
+        for (let j = 0; j < k - i; j++) {
           result += " ";
         }
         for (let j = 0; j < i; j++) {
@@ -30,28 +21,7 @@
       }
       console.log(result);
 
-      // const n = 377;
-      // let sum = 1;
-      // let i = 1;
-      // while (i <= n) {
-      //   sum += i;
-      //   i += sum;
-      //   console.log(`i=${i},sum=${sum}`);
-      // }
-
-      // const n = 10;
-      //       let i = 0;
-      //       let row = "";
-      //       while (i <= n) {
-      //         let j = 0;
-      //         while (j <= i) {
-      //           row += j + "";
-      //           j++;
-      //         }
-      //         // row += "\n";
-      //         // i++;
-      //         console.log(row);
-      //       }
+      
     </script>
   </body>
 </html>
