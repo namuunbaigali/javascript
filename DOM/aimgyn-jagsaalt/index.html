@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Өгөгдсөн аймгийн жагсаалтыг ашиглан дараах даалгаврыг хийнэ үү.
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <ul id="aimagNames">
+      <li id="aimag-101">Архангай</li>
+      <li id="aimag-202">Баян-Өлгий</li>
+      <li id="aimag-103">Баянхонгор</li>
+      <li id="aimag-104">Булган</li>
+      <li id="aimag-205">Говь-Алтай</li>
+      <li id="aimag-406">Говьсүмбэр</li>
+      <li id="aimag-407">Дархан-Уул</li>
+      <li id="aimag-408">Дорноговь</li>
+      <li id="aimag-309">Дорнод</li>
+      <li id="aimag-410">Дундговь</li>
+      <li id="aimag-211">Завхан</li>
+      <li id="aimag-112">Орхон</li>
+      <li id="aimag-113">Өвөрхангай</li>
+      <li id="aimag-414">Өмнөговь</li>
+      <li id="aimag-315">Сүхбаатар</li>
+      <li id="aimag-416">Сэлэнгэ</li>
+      <li id="aimag-417">Төв</li>
+      <li id="aimag-218">Увс</li>
+      <li id="aimag-219">Ховд</li>
+      <li id="aimag-120">Хөвсгөл</li>
+      <li id="aimag-321">Хэнтий</li>
+      <li id="aimag-522">Улаанбаатар</li>
+      <script>
+        // Хамгийн эхний li элементийг аван утгыг console.log дээр хэвлэх
+        // const neg = document.getElementById("aimagNames");
+        // console.log(neg);
+        // Хамгийн сүүлийн li элементийг аван утгыг console.log дээр хэвлэх
+        // Сүхбаатар аймгийг элементийн id-аар аван console.log дээр хэвлэх
+        const suhbaatar = document.getElementById("aimag-315");
+        console.log(suhbaatar);
+        // Тухайн жагсаалтын элементүүдэд загвар оруулах (текстийн фонт, хэмжээ,
+        //  текстийн өнгө, хүрээ, padding, margin)
+        document.getElementById("aimagNames").style.fontFamily =
+          "Rajdhani, sans-serif";
+        document.getElementById("aimagNames").style.fontSize = "2rem";
+        document.getElementById("aimagNames").style.color = "white";
+        document.getElementById("aimagNames").style.border = "9px dotted green";
+        document.getElementById("aimagNames").style.padding = "50px";
+        document.getElementById("aimagNames").style.margin = "20px";
+        document.getElementById("aimagNames").style.backgroundColor = "";
+
+        // Аймгуудыг бүс, бүсээр ялган өөр, өөр background color  өгөх
+        // (1 - Хангайн бүс, 2 - Баруун бүс, 3 - Зүүн бүс, 4 - Төвийн бүс, 5 - Улаанбаатар )
+        // Жишээ нь id = aimag-321 ийм байгаа 3 нь бүсийн дугаар, 21 нь аймгийн дугаар юм.
+
+        // ХАНГАЙН БҮС
+
+        document.getElementById("aimag-101").style.backgroundColor = "black";
+        document.getElementById("aimag-103").style.backgroundColor = "black";
+        document.getElementById("aimag-104").style.backgroundColor = "black";
+        document.getElementById("aimag-112").style.backgroundColor = "black";
+        document.getElementById("aimag-113").style.backgroundColor = "black";
+        document.getElementById("aimag-120").style.backgroundColor = "black";
+
+        // ЗҮҮН БҮС
+
+        document.getElementById("aimag-309").style.backgroundColor = "brown";
+        document.getElementById("aimag-315").style.backgroundColor = "brown";
+        document.getElementById("aimag-321").style.backgroundColor = "brown";
+
+        // БАРУУН БҮС
+
+        document.getElementById("aimag-202").style.backgroundColor = "red";
+        document.getElementById("aimag-205").style.backgroundColor = "red";
+        document.getElementById("aimag-211").style.backgroundColor = "red";
+        document.getElementById("aimag-218").style.backgroundColor = "red";
+        document.getElementById("aimag-219").style.backgroundColor = "red";
+
+        // ТӨВИЙН БҮС
+        document.getElementById("aimag-406").style.backgroundColor = "green";
+        document.getElementById("aimag-407").style.backgroundColor = "green";
+        document.getElementById("aimag-408").style.backgroundColor = "green";
+        document.getElementById("aimag-410").style.backgroundColor = "green";
+        document.getElementById("aimag-414").style.backgroundColor = "green";
+        document.getElementById("aimag-416").style.backgroundColor = "green";
+        document.getElementById("aimag-417").style.backgroundColor = "green";
+
+        //   УЛААНБААТАР
+        document.getElementById("aimag-522").style.backgroundColor =
+          "rgb(106, 90, 205)";
+      </script>
+    </ul>
+  </body>
+</html>

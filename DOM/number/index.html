@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess My Number!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Тоог таа!</h1>
+      <p class="between">(1 ээс 20 хооронд)</p>
+      <button class="btn again">Шинээр эхлэх!</button>
+      <div class="number">?</div>
+    </header>
+    <main>
+      <section class="left">
+        <input type="number" class="guess" />
+        <button class="btn check">Шалгах!</button>
+      </section>
+      <section class="right">
+        <p class="message">Тааж эхлээрэй...</p>
+        <p class="label-score">💯 Оноо: <span class="score">20</span></p>
+        <p class="label-highscore">
+          🥇 Дээд амжилт: <span class="highscore">0</span>
+        </p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
