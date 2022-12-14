@@ -1,0 +1,15 @@
+
+.box{
+    width: 400px;
+    height: 150px;
+    border: 20px solid green;
+    background-color:rgb(1, 1, 255,0.5) ;
+}
+h5{
+  
+    margin: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    font-size: 8rem;
+}

@@ -76,14 +76,17 @@
         // document.getElementById("aimag-120").style.backgroundColor = "black";
         const hangai = document.querySelector("#aimagNames");
         const hangainbus = document.querySelectorAll("li");
-        for (let i = 0; i < hangai; i++) {
-          if (hangai[0]) {
-            if (hangainbus[6] === 1) {
-              hangainbus += i;
-            } else i++;
+        console.log(hangainbus[0].id[6]);
+        for (let i = 0; i < hangainbus.length; i++) {
+          switch (hangainbus[i].id[6]) {
+            case "1":
+              hangainbus[i].style.backgroundColor = "pink";
+              break;
+            case "2":
+              hangainbus[i].style.background = "red";
+              break;
           }
         }
-        console.log(hangainbus);
         // ЗҮҮН БҮС
 
         // document.getElementById("aimag-309").style.backgroundColor = "brown";
