@@ -1,9 +1,10 @@
 
 .box{
-    width: 400px;
-    height: 150px;
-    border: 20px solid green;
-    background-color:rgb(1, 1, 255,0.5) ;
+    width: 500px;
+    height:150px;
+    border: 15px solid red;
+    background-image:url(./image/360_F_305387800_q51tHpf3H95JejDxdyK4oEVDVVytRVG7.jpeg) ;
+    background-size: cover;
 }
 h5{
   

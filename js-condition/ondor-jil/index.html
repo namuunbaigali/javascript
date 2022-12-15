@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Өгөгдсөн жилийг өндөр жил мөн эсэхийг шалгаад хэрвээ мөн бол өндөр жил мөн үгүй бол үгүй гэж хариулна уу.
+Өндөр жил гэдэг нь 4 жилд нэг удаа болдог бөгөөд тэр нь 2-р сар 29 хоногтой үед тохиолддог. Энэ нь 4-д 
+хуваагдаж байвал мөн,
+ 100 хуваагдаж байвал өндөр жил биш. Харин 400 жилд бүтнээрээ хуваагдаж байвал мөн. -->
+
+ <script>
+    const year=2023;
+    if(year%4!==0){
+        console.log('Common year');
+    }else {
+        if(year%100!==0){
+            console.log('Leap year');
+        }else{
+            if(year%400===0){
+                console.log('Leap year');
+            }else{
+                console.log('Common year!');
+            }
+        }
+    }
+ </script>
+</body>
+</html>

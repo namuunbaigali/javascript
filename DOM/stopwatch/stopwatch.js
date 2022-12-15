@@ -1,8 +1,7 @@
 const TIMER = 10;
 let MILLISECONDS = 0;
-let seconds = 55;
+let seconds = 57;
 let minutes = 0;
-let hours = 0;
 
 const timerTarget = document.querySelector("h5");
 let count = 0;
@@ -17,10 +16,11 @@ function updateTimer() {
     minutes++;
     seconds = 0;
   }
-  if (minutes == 60) {
-    hours++;
-    minutes = 0;
-  }
-  timerTarget.innerHTML = `${hours}:${minutes}:${seconds}:${MILLISECONDS}`;
+  // let n = 0;
+  // let o = 9;
+  // if (seconds <= o) {
+  //   n += seconds;
+  // }
+  timerTarget.innerHTML = `${minutes}:${seconds}:${MILLISECONDS}`;
 }
-const countDown = setInterval(updateTimer, 1000);
+const countDown = setInterval(updateTimer, 10);
