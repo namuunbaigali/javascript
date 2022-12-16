@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>СУРАГЧИД</title>
+</head>
+<body>
+    <!-- 1. Ангийнхаа сурагчидын дата үүсгэ. (name: "Гончигсумлай",
+     birthOfYear: 1999, hobby: "морь", single: false)
+2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function
+ бичэх.
+3. Сурагчийн насыг бодож олох function бичэх.
+4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх. -->
+
+<script>
+     const data = [
+        {lastname: "Цэцэг", hobby: "морь унах", birthOfYear: 2005 ,single:false },
+        {
+          lastname: "Ганцэцэг",
+          hobby: "Теннис",
+          birthOfYear: 2004,
+          single:false
+        },
+        {
+          lastname: "Саран",
+          hobby: "Ном унших",
+          birthOfYear: 1999,
+          single:false
+        },
+        {
+          lastname: "Дөлгөөн",
+          hobby: "Кино үзэх",
+          birthOfYear: 1995,
+          single:false
+        },
+        {
+          lastname: "Хүдэрмөнх",
+          hobby: " Сээр зохих",
+          birthOfYear: 2001,
+          single:false
+        },
+        {
+          lastname: "Баасанцэцэг",
+          hobby: "Дуулах",
+          birthOfYear: 2005,
+          single:false
+        },
+        {          
+          lastname: "Загдрагчаа",
+          hobby: "Аялах",
+          birthOfYear: 2002,
+          single:false
+        },
+        {
+          lastname: "Ану",
+          hobby: "Ууланд алхах",
+          birthOfYear: 1997,
+          single:false
+        },
+        {
+          lastname: "Сэлэнгэ",
+          hobby: "Теннис тоглох",
+          birthOfYear: 1998,
+          single:false
+        },
+      ];
+
+    //   2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function
+//  бичэх.
+function getCountByAge(list, birthOfYear){
+    let count=0;
+    for(let i=0; i<list.length; i++){
+        if(list[i].birthOfYear !==2002){
+            i++;
+        }else (list[i].birthOfYear===2002)
+            count++;
+        
+        
+    }
+    return count;
+}
+const youth=getCountByAge(data,"birthOfYear",1990,2002);
+const children=getCountByAge(data,"birthOfYear",2003,2022);
+
+    console.log(`Нийт: ${youth} 20-оос дээш настай хүн ${ children} 20-оос доош настай хүн байна. `);
+
+</script>
+</body>
+</html>
