@@ -2,7 +2,7 @@
 .box{
     width: 500px;
     height:150px;
-    border: 15px solid rgb(50, 143, 50);
+    border: 15px solid rgb(137, 172, 137);
     background-image:url(./image/downloa.jpeg) ;
     background-size: cover;
 }

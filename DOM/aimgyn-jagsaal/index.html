@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="aimagNames">
+        <li id="aimag-101">Архангай</li>
+        <li id="aimag-202">Баян-Өлгий</li>
+        <li id="aimag-103">Баянхонгор</li>
+        <li id="aimag-104">Булган</li>
+        <li id="aimag-205">Говь-Алтай</li>
+        <li id="aimag-406">Говьсүмбэр</li>
+        <li id="aimag-407">Дархан-Уул</li>
+        <li id="aimag-408">Дорноговь</li>
+        <li id="aimag-309">Дорнод</li>
+        <li id="aimag-410">Дундговь</li>
+        <li id="aimag-211">Завхан</li>
+        <li id="aimag-112">Орхон</li>
+        <li id="aimag-113">Өвөрхангай</li>
+        <li id="aimag-414">Өмнөговь</li>
+        <li id="aimag-315">Сүхбаатар</li>
+        <li id="aimag-416">Сэлэнгэ</li>
+        <li id="aimag-417">Төв</li>
+        <li id="aimag-218">Увс</li>
+        <li id="aimag-219">Ховд</li>
+        <li id="aimag-120">Хөвсгөл</li>
+        <li id="aimag-321">Хэнтий</li>
+        <li id="aimag-522">Улаанбаатар</li>
+    </ul>
+
+    <script>
+        const listOne=document.getElementById("aimagNames").getElementsByTagName("li")[0];
+        const listLast=document.getElementById("aimagNames").getElementsByTagName("li")[21];
+        const list=document.getElementById("aimagNames").getElementsByTagName("li");
+        const provinse=document.getElementById("aimagNames");
+        const country=document.querySelectorAll("#aimagNames li");
+
+
+        provinse.style.listStyle="none";
+        provinse.style.padding='50px';
+        for( let i = 0; i < country.length; i++){
+          country[i].style.fontSize='2rem';
+          country[i].style.padding='20px';
+          country[i].style.margin='20px';
+          country[i].style.border='5px solid green';
+          country[i].style.textAlign='center';
+        }
+
+        const hangai = document.querySelector("#aimagNames");
+        const hangainbus = document.querySelectorAll("li");
+        console.log(hangainbus[0].id[6]);
+        for (let i = 0; i < hangainbus.length; i++) {
+          switch (hangainbus[i].id[6]) {
+            case "1":
+              hangainbus[i].style.backgroundColor = "pink";
+              break;
+            case "2":
+              hangainbus[i].style.background = "#eb3942";
+              break;
+              case "3":
+              hangainbus[i].style.background = "yellow";
+              break;
+              case "4":
+              hangainbus[i].style.background = "#0cdaea";
+              break;
+              case "5":
+              hangainbus[i].style.background = "green";
+              break;
+          }
+        }
+
+    </script>
+</body>
+</html>

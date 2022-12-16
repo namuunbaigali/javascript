@@ -1,6 +1,6 @@
 const TIMER = 10;
 let MILLISECONDS = 0;
-let seconds = 57;
+let seconds = 0;
 let minutes = 0;
 
 const timerTarget = document.querySelector("h5");
