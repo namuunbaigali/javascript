@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Click to change bg color</title>
+    <style>
+        button{
+            width: 200px;
+            height: 50px;
+            font-size: 1.2rem;
+            background-color: aquamarine;
+            
+        }
+        h1{
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+        h2{
+            text-align: center;
+            padding: 10px;
+            font-size: 2rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="myBtn">Click Me!!</button>
+    <h1> Click to change bg color</h1>
+    <h2>Click to change bg color</h2>
+    <script>
+        function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+      function getRandomColor() {
+        const red = getRandomNumber(0, 255);
+        const green = getRandomNumber(0, 255);
+        const blue = getRandomNumber(0, 255);
+        return `rgb(${red},${green},${blue})`;
+      }
+      const h1 = document.querySelector("h1");
+      const h2= document.querySelector("h2");
+
+      const myButton = document.getElementById("myBtn");
+      myButton.addEventListener("click", function () {
+        h1.style.backgroundColor = getRandomColor();
+        h2.style.backgroundColor = getRandomColor();
+      });
+    </script>
+</body>
+</html>
