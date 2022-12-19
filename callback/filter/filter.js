@@ -1,4 +1,4 @@
-const filter = [
+const arr = [
   {
     id: 1,
     first_name: "Barbaraanne",
@@ -80,24 +80,52 @@ const filter = [
     ip_address: "248.136.226.188",
   },
 ];
-function filter(filter, callback) {
-  let results = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (callback(numbers[i])) {
-      results.push(numbers[i]);
+
+function clone(arr, callback) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i]));
+  }
+  return result;
+}
+
+function filter(arr, callback) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      result.push(arr[i]);
     }
   }
-  return results;
+  return result;
 }
-const evens = filter(numbers, (n) => {
-  return n % 2 === 0;
-}); // [2, 4, 6, 8]
-const odds = filter(numbers, (n) => {
-  return n % 2 !== 0;
-}); // [1, 3, 5, 7]
-const odds = filter(numbers, (n) => {
-  return n % 3 === 0;
-}); // [3, 6, 9]
-1;
-2;
-3;
+
+function isGendermatch(el, gender) {
+  return el.gender.toLowerCase() === gender.toLowerCase();
+}
+
+const males = filter(arr, (el) => {
+  return isGendermatch(el, "male");
+});
+const female = filter(arr, (el) => {
+  return isGendermatch(el, "female");
+});
+const other = filter(arr, (el) => {
+  return isGendermatch(el, "Genderqueer");
+});
+console.log(males.length);
+console.log(female.length);
+console.log(other.length);
+
+function simplify(item) {
+  return { value: item.id, label: `${item.first_name} ${item.last_name}` };
+}
+
+const simplified = clone(arr, simplify);
+
+console.log(simplified);
+
+function clone (arr,callback){
+    const result=[];
+    for(let i = 0; i<arr.le)
+}
