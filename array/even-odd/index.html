@@ -13,35 +13,19 @@
       // 2. Хэдэн ширхэг тэгш тоо байгаа вэ?
 
       let too = [5, 6, 4, 12, 19, 121, 1, 7, 9, 63];
-      let sum = 0;
-      for (let i = 0; i <= too.length; i++);
-
-      if (too[i] % 2 === 0) {
-        console.log("tegshtoo");
-      } else too[i] % 2 !== 0;
-      console.log("sondgio too");
-
-      // let n = 100;
-      // let j = 0;
-      // let i = 0;
-      // while (i <= n) {
-      //   j += i;
-      //   i += 1;
-      // }
-      // console.log(n);
-
-      //   let arrayOfNumbers = [43, 56, 23, 89, 88, 90, 99, 652, 15, 290, 11];
-      //   sum = 0;
-      //   for (let i = 0; i < arrayOfNumbers.length; i++) {
-      //     if ((sum = arrayOfNumbers[i])) {
-      //       sum < arrayOfNumbers[i];
-      //     }
-      //   }
-      //   console.log(sum);
-      // console.log(sum);
-      // if ("too.lenght" % 2 === 0) {
-      //   console.log("tegsh too");
-      // } else console.log("sondgoi too");
+      let sum = [];
+      let sondgoi = [];
+      for (let i = 0; i < too.length; i++) {
+        if (too[i] % 2 === 0) {
+          sum += too[i];
+        }
+      }
+      for (let i = 0; i < too.length; i++) {
+        if (too[i] % 2 !== 0) {
+          sondgoi += "," + too[i];
+        }
+      }
+      console.log(sum, sondgoi);
     </script>
   </body>
 </html>

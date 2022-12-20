@@ -11,20 +11,34 @@
       // 1. 2 тоон утга авдаг 2 function үүсгэ.
       // 2. 2 авсан тоон утгын хоорондох тэгш тоонуудын array буцаадаг 1 function.
       // 2. 2 авсан тоон утгын хоорондох сондгой тоонуудын array буцаадаг 1 function.
-
-      function too(a, g) {
-        for (let i = 0; a < i % 2 === 0 > g; i++);
-        return a+g;
+      let a = 3;
+      let g = 13;
+      let count = " ";
+      function tegshtoo(value) {
+        for (let i = 0; i < g.length; i++) {
+          if (a < i % 2 === 0) {
+            return "tegsh too";
+            count += i;
+          }
+          return "sondgoi too";
+        }
       }
-      console.log(3,13);
-      //
 
-      //   let i = 0;
-      // i++;
-      // if (a < i % 2 === 0 > g) {
-      //   return "tegsh too";
-      // } else return "sondgoi too";
-      // return "a,g";
+      console.log(count);
+
+      // function getEvenOdd(value) {
+      //   let count = 0;
+      //   for (let i = 0; i < too.length; i++) {
+      //     if (a < i % 2 === 0) {
+      //       count++;
+      //       return 'tegshtooo';
+      //     } return 'sonfgoi too'
+      //   }
+      // }
+      // const femaleCount = getCountByGender(data, "f");
+      // const maleCount = getCountByGender(data, "m");
+
+      // console.log(`niit ${femaleCount} emegtei,${maleCount} eregtei baina.`);
     </script>
   </body>
 </html>
