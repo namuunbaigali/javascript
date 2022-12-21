@@ -1,13 +1,16 @@
 const puzzle = [
   [0, 1, 2, 3],
   [4, 5, 6, 7],
-  [0, 1, 2, 3],
-  [4, 5, 6, 7],
+  [8, 9, 10, 11],
+  [12, 13, 14],
 ];
 
 let found = 0;
-let flippedItems = function getTile(value) {
+let flippedItems = [];
+
+function getTile(value) {
   const tile = document.createElement("li");
+
   const tileFront = document.createElement("div");
   tileFront.innerHTML = value;
   tileFront.classList.add("front");
@@ -16,23 +19,21 @@ let flippedItems = function getTile(value) {
   const tileBack = document.createElement("div");
   tileBack.classList.add("back");
   tile.appendChild(tileBack);
+
+  tile.setAttribute("val", value);
+
   tile.addEventListener("click", function () {
-    if (tile) {
-      tile.classList.add("active");
-      flippedItems.push(tile);
-    }
+    tile.classList.add("active");
+    flippedItems.push(tile);
+    flippedItems = [];
     console.log(flippedItems);
-
-    if (flippedItems.length >= 2) {
-      flippedItems[2].classList.remove("active");
-    }
   });
+
   return tile;
-};
+}
 
-//darahaar hiih uildlee biciy
+// const gameTarget = document.querySelector("#gameTarget");
 
-const gameTarget = document.querySelector("#gameTarget");
 for (let row = 0; row < puzzle.length; row++) {
   const rowItems = puzzle[row];
   for (let col = 0; col < rowItems.length; col++) {

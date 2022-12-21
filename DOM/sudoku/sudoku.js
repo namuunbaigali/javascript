@@ -37,13 +37,13 @@ tableTarget.appendChild(tbody);
 
 const validkeys = "0123456789";
 
-// document.addEventListener("keypress", function (e) {
-//   console.log(e.key);
-//   if (validkeys.includes(key)) {
-//     if (key === "0") {
-//       chosenTd.innerHTML = "";
-//     }
-//   } else {
-//     chosenTd.innerHTML = key;
-//   }
-// }
+document.addEventListener("keypress", function (e) {
+  console.log(e.key);
+  if (validkeys.includes(key)) {
+    if (key === "0") {
+      chosenTd.innerHTML = "";
+    }
+  } else {
+    chosenTd.innerHTML = key;
+  }
+}

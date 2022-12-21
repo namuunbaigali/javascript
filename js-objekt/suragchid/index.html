@@ -84,11 +84,40 @@
         return count;
       }
 
-      const childrenCount = getCountByFieldValueRange(data, "age", 2003, 2022);
-      const youth = getCountByFieldValueRange(data, "age", 1990, 2002);
-      console.log(`Niit:
-       ${childrenCount} huuhed,
-       ${youth} zaluu nasnii humuus`);
+      const childrenCount = getCountByFieldValueRange(
+        data,
+        "birthOfYear",
+        2003,
+        2022
+      );
+      console.log(`Нийт:
+       ${childrenCount} ширхэг 20-оос дээш насны хүн.
+       `);
+
+      // 3. Сурагчийн насыг бодож олох function бичэх.
+      function age(list, birthOfYear) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].birthOfYear === list[i].birthOfYear) {
+            count++;
+          }
+        }
+        return count;
+      }
+      const children = age(data, 2022 - "birthOfYear");
+      console.log(children);
+      // 4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх.
+      function rell(list, single) {
+        let count = 0;
+        for (let i = 0; i < list.length; i++) {
+          if (list[i].single === list[i].single) {
+            count++;
+          }
+        }
+        return count;
+      }
+      const status = age(data, single);
+      console.log(status);
     </script>
   </body>
 </html>

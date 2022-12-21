@@ -48,25 +48,7 @@ li {
     transform: rotateY(180deg);
 }
 
-.back {
-    opacity: 1;
-    visibility: visible;
-    background-color: #ccc;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
 
-li:active .back {
-    transform: rotateY(180deg);
-    visibility: hidden;
-    opacity: 0;
-}
 
-li:active .front {
-    transform: rotateY(0);
-    visibility: visible;
-    opacity: 1;
-}
+
+

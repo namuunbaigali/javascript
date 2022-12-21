@@ -1,27 +1,29 @@
-// const rawEgg = "tuuhi ondog";
-// function cookEgg(rawEgg) {
-//   const isForgetToFlip = false;
-//   const prom = new Promise(function (reject, resolve) {
-//     setTimeout(function () {
-//       if (!isForgetToFlip) {
-//         resolve("cooked egg");
-//       } else {
-//         reject("ha;f burnt egg");
-//       }
-//     }, 2000);
-//   });
-//   return Promise;
-// }
+function prepareCoffee() {
+  const coffeePromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Prepared coffee");
+    }, 10000);
+  });
+  return coffeePromise;
+}
 
-// let result = rawEgg;
-// cookEgg(rawEgg)
-//   .then(function (res) {
-//     result = res;
-//     console.log(result);
-//   })
-//   .catch(function (err) {
-//     console.log(err);
-//   });
+function fryEgg() {
+  const eggPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Fried egg");
+    }, 5000);
+  });
+  return eggPromise;
+}
+
+async function startMorning() {
+  const coffee = await prepareCoffee();
+  console.log(coffee);
+  const egg = await fryEgg();
+  console.log(egg);
+}
+startMorning();
+
 function getAnEgg() {
   const eggCount = 12;
   const promise = new Promise((resolve, reject) => {
@@ -92,31 +94,15 @@ function boilEgg() {
   return promise;
 }
 
-const cookedEgg = getAnEgg()
-  .then((res) => {
-    console.log(res);
-    console.log("picked an egg");
-    return pickAnPot();
-  })
-  .then((res) => {
-    console.log(res);
-    console.log("picked an pot");
-    return fillWater();
-  })
-  .then((res) => {
-    console.log(res);
-    console.log("filled pot");
-    return startStove();
-  })
-  .then((res) => {
-    console.log(res);
-    console.log("started stove");
-    return boilEgg();
-  })
-  .then((res) => {
-    console.log("boiled an egg");
-    return console.log(res);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+async function cookedEgg() {
+  await getAnEgg();
+  console.log(" got an egg");
+  await pickAnPot();
+  console.log(" got an pot");
+  await fillWater();
+  console.log(" filled water");
+  await startStove();
+  console.log(" started stove");
+  await boilEgg();
+  console.log(" boiled egg");
+}
