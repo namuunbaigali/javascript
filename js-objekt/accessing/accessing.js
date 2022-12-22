@@ -47,9 +47,7 @@ console.log(`Нийт ${femaleCount} эмэгтэй,${maleCount} эрэгтэй 
 //  Сурагчдын насны дунджийг олох функц бичих
 function getCountByAge(list, age) {
   let count = 0;
-  for (let i = 0; i < list.length; i++) {
-    count++;
-  }
+  for (let i = 0; i < list.length; i++) {}
   return count;
 }
 // const femaleCount = getCountByAge(students, "female");
@@ -58,3 +56,4 @@ function getCountByAge(list, age) {
 console.log(count);
 
 //  Сурагчидад овог нэмж оруулах
+students;
