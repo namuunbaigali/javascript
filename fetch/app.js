@@ -37,6 +37,12 @@
 //   .then((res) => res.json())
 //   .then((data) => console.log(data));
 
+const params = new URL(window.location).searchParams;
+const category = params.get("category");
+const limit = Number(params.get("limit")) || 12;
+const page = Number(params.get("page")) || 1;
+const searchQuery = params.get("q");
+
 function getProductCard(product) {
   return `<div class="col-4">
             <div class="card">
@@ -54,7 +60,7 @@ function getProductCard(product) {
 
 const productsTarget = document.querySelector("#productsTarget");
 
-let activePage = 1;
+// let activePage = 1;
 function getPagination(total, currenPage, limit) {
   let pagination = `<nav aria-label="...">
   <ul class="pagination justify-content-center">`;
@@ -65,39 +71,77 @@ function getPagination(total, currenPage, limit) {
       <span class="page-link">${page}</span>
     </li>`;
     } else {
+      const queryParam = searchQuery ? "&q=" + searchQuery : "";
       pagination += `
       <li class="page-item">
-      <a class="page-link" href="javascript:getProducts(${limit} , ${
-        limit * (page - 1)
-      })">${page}</a>
+      <a class="page-link" href=" ${
+        window.location.pathname
+      }?limit=${12} & page=${page}${queryParam}"> ${page} 
+      </a>
       </li>`;
     }
   }
 
-  pagination += ` </ul>
-</nav>`;
+  pagination += ` </ul></nav>`;
   return pagination;
 }
 
-async function getProducts(limit = 10, skip = 0) {
+async function getProducts(limit, page, category, searchQuery) {
   productsTarget.innerHTML = "";
-  const res = await fetch(
-    `https://dummyjson.com/products?limit=${limit}&skip=${skip}`
-  );
+  const skip = (page - 1) * limit;
+
+  let dataUrl = `https://dummyjson.com/products?limit=${limit}&skip=${skip}`;
+  if (category) {
+    dataUrl = `https://dummyjson.com/products/category/${category}?limit=${limit}&skip=${skip}`;
+  }
+  if (searchQuery) {
+    dataUrl = `https://dummyjson.com/products/category/${searchQuery}?limit=${limit}&skip=${skip}`;
+  }
+
+  const res = await fetch(dataUrl);
   const data = await res.json();
 
-  // for(let i=0; i<data.products.length; i++){
-  //     const product=data.products[i]
-  // }
+  let products = data.products;
 
-  for (const product of data.products) {
+  products.forEach(function (product) {
     productsTarget.innerHTML += getProductCard(product);
-  }
-  productsTarget.innerHTML += getPagination(
-    data.total,
-    skip / limit + 1,
-    limit
-  );
+  });
+
+  productsTarget.innerHTML += getPagination(data.total, page, limit);
 }
 
-getProducts();
+getProducts(limit, page, category, searchQuery);
+
+function getMenuItem(menuItem) {
+  return `<li class="nav-item">
+              <a class="nav-link ${
+                menuItem.isActive && "active"
+              }" aria-current="page" href="${menuItem.link}">${
+    menuItem.name
+  }</a>
+            </li>`;
+}
+
+const menuTarget = document.querySelector("#menuTarget");
+
+async function getCategories() {
+  const res = await fetch("https://dummyjson.com/products/categories");
+  const categories = await res.json();
+  return categories.slice(0, 5);
+}
+
+async function getMenus() {
+  let categories = await getCategories();
+
+  const menuCategories = categories.map((category) => {
+    return {
+      isActive: false,
+      link: window.location.pathname + "?category=" + category,
+      name: category,
+    };
+  });
+  menuCategories.map((menuCategory) => {
+    menuTarget.innerHTML += getMenuItem(menuCategory);
+  });
+}
+getMenus();

@@ -26,7 +26,7 @@
           lastname: "Ганцэцэг",
           hobby: "Теннис",
           birthOfYear: 2004,
-          single: false,
+          single: true,
         },
         {
           lastname: "Саран",
@@ -38,7 +38,7 @@
           lastname: "Дөлгөөн",
           hobby: "Кино үзэх",
           birthOfYear: 1995,
-          single: false,
+          single: true,
         },
         {
           lastname: "Хүдэрмөнх",
@@ -56,7 +56,7 @@
           lastname: "Загдрагчаа",
           hobby: "Аялах",
           birthOfYear: 2002,
-          single: false,
+          single: true,
         },
         {
           lastname: "Ану",
@@ -72,7 +72,7 @@
         },
       ];
 
-      //   2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function
+      // 2. Сурагчидаас 20 - оос дээш насны сурагчидыг буцаах function
       //  бичэх.
       function getCountByFieldValueRange(list, key, min, max) {
         let count = 0;
@@ -90,34 +90,38 @@
         2003,
         2022
       );
-      console.log(`Нийт:
-       ${childrenCount} ширхэг 20-оос дээш насны хүн.
+      console.log(`Нийт:${childrenCount} ширхэг 20-оос дээш насны хүн.
        `);
-
       // 3. Сурагчийн насыг бодож олох function бичэх.
-      function age(list, birthOfYear) {
-        let count = 0;
-        for (let i = 0; i < list.length; i++) {
-          if (list[i].birthOfYear === list[i].birthOfYear) {
-            count++;
-          }
-        }
-        return count;
-      }
-      const children = age(data, 2022 - "birthOfYear");
-      console.log(children);
+
       // 4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх.
-      function rell(list, single) {
-        let count = 0;
-        for (let i = 0; i < list.length; i++) {
-          if (list[i].single === list[i].single) {
-            count++;
+
+      let x = function (birtYear) {
+        let k = "";
+        for (let i = 0; i < data.length; i++) {
+          let h = 2022 - birtYear[i].birthOfYear;
+          k += birtYear[i].lastname + ": " + h + " " + "\n";
+        }
+        return k;
+      };
+
+      let y = x(data);
+      console.log(y);
+
+      // // 4. Сурагчидын ганц бие хүмүүсийг буцаах function бичэх. -->
+
+      let gender = function (huis) {
+        let counttt = "";
+        for (i = 0; i < data.length; i++) {
+          if (huis[i].single === false) {
+            counttt += huis[i].lastname + "\n";
           }
         }
-        return count;
-      }
-      const status = age(data, single);
-      console.log(status);
+        return counttt;
+      };
+
+      let u = gender(data);
+      console.log(u);
     </script>
   </body>
 </html>

@@ -44,16 +44,24 @@ const femaleCount = getCountByGender(students, "female");
 const maleCount = getCountByGender(students, "male");
 
 console.log(`Нийт ${femaleCount} эмэгтэй,${maleCount} эрэгтэй байна.`);
-//  Сурагчдын насны дунджийг олох функц бичих
-function getCountByAge(list, age) {
-  let count = 0;
-  for (let i = 0; i < list.length; i++) {}
-  return count;
-}
-// const femaleCount = getCountByAge(students, "female");
-// const maleCount = getCountByAge(students, "male");
 
-console.log(count);
+//  Сурагчдын насны дунджийг олох функц бичих
+function getCountByAge(nas) {
+  let count = 0;
+  for (let i = 0; i < students.length; i++) {
+    count += students[i].age;
+  }
+  return count / students.length;
+}
+
+let x = getCountByAge(students);
+console.log(x);
 
 //  Сурагчидад овог нэмж оруулах
-students;
+function getCountByFirst(owog) {
+  let count = 0;
+  for (let i = 0; i < students.length; i++) {
+    count += students[i].age;
+  }
+  return count / students.length;
+}
