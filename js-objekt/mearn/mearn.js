@@ -82,23 +82,29 @@ const users = [
 //  Нэг хэрэглэгчийн объектын бүх утгыг авч хэвлэх.
 console.log(users[0]);
 // Хэрэглэгчийн объектод олон ур чадвар эзэмшсэн хүнийг олоорой.
-// function getCountBySkill(list, skills) {
-//   for (let i = 0; i < list.length; i++) {}
-//   return count;
-// }
-
-// const skills = getCountBySkill(users, "skills");
-// console.log(skills.length);
-
-// Нэвтэрсэн хэрэглэгчдийг тоолж, дараах объектоос 50-аас дээш оноо авсан хэрэглэгчдийг тоол.
-function getCountByFieldValueRange(list, key, min, max) {
-  let count = 0;
+function getCountBySkill(list, skills) {
+  let count = " ";
   for (let i = 0; i < list.length; i++) {
-    if (list[i][key] > min && list[i][key] < max) {
-      count++;
+    if (users[i].skills.length < i) {
+      i++;
     }
+    count += users[i].skills.length;
   }
   return count;
 }
-const total = getCountByFieldValueRange(users, "points", 50, 101);
-console.log(total);
+
+const skills = getCountBySkill(users, "skills");
+console.log(skills + "");
+
+// Нэвтэрсэн хэрэглэгчдийг тоолж, дараах объектоос 50-аас дээш оноо авсан хэрэглэгчдийг тоол.
+// function getCountByFieldValueRange(list, key, min, max) {
+//   let count = 0;
+//   for (let i = 0; i < list.length; i++) {
+//     if (list[i][key] > min && list[i][key] < max) {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// const total = getCountByFieldValueRange(users, "points", 50, 101);
+// console.log(total);

@@ -39,10 +39,10 @@ li {
     border: 1px solid black;
 }
 
-li.active {
+/* li.active {
     background-color: black;
     bottom: -100px;
-}
+} */
 
 
 

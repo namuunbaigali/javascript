@@ -13,19 +13,21 @@
       // 2. Хэдэн ширхэг тэгш тоо байгаа вэ?
 
       let too = [5, 6, 4, 12, 19, 121, 1, 7, 9, 63];
-      let sum = [];
-      let sondgoi = [];
+      let tegsh = "";
+      let sondgoi = "";
       for (let i = 0; i < too.length; i++) {
         if (too[i] % 2 === 0) {
-          sum += too[i];
+          tegsh++;
         }
       }
       for (let i = 0; i < too.length; i++) {
         if (too[i] % 2 !== 0) {
-          sondgoi += "," + too[i];
+          sondgoi++;
         }
       }
-      console.log(sum, sondgoi);
+      console.log(
+        `Нийт : ${tegsh} ширхэг тэгш тоо ${sondgoi} ширхэг сондгой тоо байна.`
+      );
     </script>
   </body>
 </html>

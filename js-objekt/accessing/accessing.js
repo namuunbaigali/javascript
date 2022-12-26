@@ -58,10 +58,3 @@ let x = getCountByAge(students);
 console.log(x);
 
 //  Сурагчидад овог нэмж оруулах
-function getCountByFirst(owog) {
-  let count = 0;
-  for (let i = 0; i < students.length; i++) {
-    count += students[i].age;
-  }
-  return count / students.length;
-}

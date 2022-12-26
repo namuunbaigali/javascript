@@ -1,42 +1,3 @@
-// fetch("http://127.0.0.1:5502/fetch/data.html")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data);
-//   });
-
-// //   get
-// fetch("https://dummyjson.com/products")
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-
-// //   post
-// fetch("https://dummyjson.com/products/add", {
-//   method: "POST",
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({
-//     title: "BMW Pencil",
-//     /* other product data */
-//   }),
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-// // put
-// fetch("https://dummyjson.com/products/1", {
-//   method: "PUT" /* or PATCH */,
-//   headers: { "Content-Type": "application/json" },
-//   body: JSON.stringify({
-//     title: "iPhone Galaxy +1",
-//   }),
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-// // delete
-// fetch("https://dummyjson.com/products/1", {
-//   method: "DELETE",
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
-
 const params = new URL(window.location).searchParams;
 const category = params.get("category");
 const limit = Number(params.get("limit")) || 12;
@@ -44,11 +5,11 @@ const page = Number(params.get("page")) || 1;
 const searchQuery = params.get("q");
 
 function getProductCard(product) {
-  return `<div class="col-4">
+  return `<div class="col-3">
             <div class="card">
-             <div class='ratio ratio-4x3'>
+            <div class="ratio ratio-4x3">
               <img src="${product.thumbnail}" class="card-img-top" alt="${product.title}" />
-             </div>
+            </div>
               <div class="card-body">
                 <p class="card-name">${product.title}</p>
                 <p class="card-category">${product.category}</p>
@@ -60,29 +21,30 @@ function getProductCard(product) {
 
 const productsTarget = document.querySelector("#productsTarget");
 
-// let activePage = 1;
-function getPagination(total, currenPage, limit) {
-  let pagination = `<nav aria-label="...">
-  <ul class="pagination justify-content-center">`;
+function getPagination(total, currentPage, limit) {
+  let pagination = `<nav aria-label="..."> <ul class="pagination justify-content-center">`;
   const totalPages = Math.ceil(total / limit);
-  for (let page = 0; page <= totalPages; page++) {
-    if (page === currenPage) {
-      pagination += ` <li class="page-item active" aria-current="page">
-      <span class="page-link">${page}</span>
-    </li>`;
+  for (let page = 1; page <= totalPages; page++) {
+    if (page === currentPage) {
+      pagination += ` 
+	  	<li class="page-item active" aria-current="page">
+      		<span class="page-link">${page}</span>
+		</li>`;
     } else {
       const queryParam = searchQuery ? "&q=" + searchQuery : "";
       pagination += `
-      <li class="page-item">
-      <a class="page-link" href=" ${
-        window.location.pathname
-      }?limit=${12} & page=${page}${queryParam}"> ${page} 
-      </a>
-      </li>`;
+        <li class="page-item">
+          <a 
+          class="page-link"
+          href="${
+            window.location.pathname
+          }?limit=${12}&page=${page}${queryParam}">
+            ${page}
+          </a>
+        </li>`;
     }
   }
-
-  pagination += ` </ul></nav>`;
+  pagination += `</ul></nav>`;
   return pagination;
 }
 
@@ -95,7 +57,7 @@ async function getProducts(limit, page, category, searchQuery) {
     dataUrl = `https://dummyjson.com/products/category/${category}?limit=${limit}&skip=${skip}`;
   }
   if (searchQuery) {
-    dataUrl = `https://dummyjson.com/products/category/${searchQuery}?limit=${limit}&skip=${skip}`;
+    dataUrl = `https://dummyjson.com/products/search?q=${searchQuery}&limit=${limit}&skip=${skip}`;
   }
 
   const res = await fetch(dataUrl);
@@ -113,13 +75,14 @@ async function getProducts(limit, page, category, searchQuery) {
 getProducts(limit, page, category, searchQuery);
 
 function getMenuItem(menuItem) {
-  return `<li class="nav-item">
-              <a class="nav-link ${
-                menuItem.isActive && "active"
-              }" aria-current="page" href="${menuItem.link}">${
-    menuItem.name
-  }</a>
-            </li>`;
+  return `
+    <li class="nav-item">
+      <a class="nav-link ${menuItem.isActive && "active"}"
+         aria-current="page"
+         href="${menuItem.link}">
+         ${menuItem.name}
+      </a>
+    </li>`;
 }
 
 const menuTarget = document.querySelector("#menuTarget");
@@ -131,7 +94,7 @@ async function getCategories() {
 }
 
 async function getMenus() {
-  let categories = await getCategories();
+  const categories = await getCategories();
 
   const menuCategories = categories.map((category) => {
     return {
@@ -140,8 +103,14 @@ async function getMenus() {
       name: category,
     };
   });
+
   menuCategories.map((menuCategory) => {
     menuTarget.innerHTML += getMenuItem(menuCategory);
   });
 }
+
 getMenus();
+
+fetch("https://dummyjson.com/products/1%27")
+  .then((res) => res.json())
+  .then((data) => console.log(data));

@@ -46,4 +46,4 @@ document.addEventListener("keypress", function (e) {
   } else {
     chosenTd.innerHTML = key;
   }
-}
+});

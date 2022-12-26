@@ -27,7 +27,7 @@ function getAnEgg() {
   const promise = new Promise((resolve, reject) => {
     if (eggCount > 0) {
       setTimeout(() => {
-        resolve(true);
+        resolve("banhar");
       }, 1000);
     } else {
       reject("Run out of egg");
