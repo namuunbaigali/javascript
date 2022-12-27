@@ -1,0 +1,55 @@
+.card-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card-category {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #999;
+    width: 100%;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.card-price {
+    font-size: 14px;
+}
+
+.ratio .card-img-top {
+    object-fit: cover;
+}
+.card{
+    cursor: pointer;
+}
+const zasah=document.querySelector("#zasahad");
+
+zasah.addEventListener("click", async ()=> {
+        const updateCar= {
+            imageUrl: imageUrlTarget.value,
+            model: modalTarget.value,
+            brand: brandTarget.value,
+            price: priceTarget.value,
+        }
+
+        ;
+
+        const req=await fetch("http://localhost:3333/api/cars", {
+
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            }
+
+            ,
+            body: JSON.stringify(updateCar),
+        }) .then((res)=> res.json()) .catch((err)=> {
+            alert("amjiltta zaslaa");
+            getCarsHtml();
+        });

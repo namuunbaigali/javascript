@@ -14,7 +14,7 @@
       let a = 3;
       let g = 13;
       let count = " ";
-      function tegshtoo(value) {
+      function tegshtoo(value, too) {
         for (let i = a; i < g.length; i++) {
           if (a < i % 2 === 0) {
             return "tegsh too";
@@ -23,8 +23,9 @@
           return "sondgoi too";
         }
       }
+      tegshtoo(a, g);
 
-      console.log(count);
+      console.log();
 
       // function getEvenOdd(value) {
       //   let count = 0;
