@@ -87,9 +87,12 @@ const deleteCar = async (id) => {
       body: JSON.stringify({ id }),
     })
       .then((res) => res.json())
-      .catch((err) => {
+      .then((res) => {
         alert("amjiltta ustgalaa");
         getCarsHtml();
+      })
+      .catch((res) => {
+        console.warn(err);
       });
 };
 
