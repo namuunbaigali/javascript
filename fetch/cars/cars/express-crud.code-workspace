@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../express-crud"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cars"
+	}
+}
