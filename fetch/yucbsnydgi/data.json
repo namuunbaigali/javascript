@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": { "title": "Madame", "first": "Delphine", "last": "Martin" },
+      "location": {
+        "street": { "number": 4416, "name": "Esplanade du 9 Novembre 1989" },
+        "city": "Niederbipp",
+        "state": "Uri",
+        "country": "Switzerland",
+        "postcode": 7489,
+        "coordinates": { "latitude": "-58.1886", "longitude": "174.9267" },
+        "timezone": { "offset": "-9:00", "description": "Alaska" }
+      },
+      "email": "delphine.martin@example.com",
+      "login": {
+        "uuid": "3ae1729d-1dbc-44fa-84df-79b80bbbbb04",
+        "username": "yellowkoala637",
+        "password": "spikey",
+        "salt": "1SXp9NHq",
+        "md5": "b883a4060e7bd47c5a695525a34a09fc",
+        "sha1": "2612cf4338cc3405766e49cac9a8067f2d433551",
+        "sha256": "68879b69806a8b91217c31072b3a9ab7ae3c33c2943564f41a5d17065cb7f314"
+      },
+      "dob": { "date": "1983-11-22T01:59:49.312Z", "age": 39 },
+      "registered": { "date": "2013-05-22T22:54:39.416Z", "age": 9 },
+      "phone": "078 770 23 92",
+      "cell": "077 146 32 34",
+      "id": { "name": "AVS", "value": "756.3422.2940.50" },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/3.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/3.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/3.jpg"
+      },
+      "nat": "CH"
+    }
+  ],
+  "info": {
+    "seed": "8c1778158349bf7e",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
